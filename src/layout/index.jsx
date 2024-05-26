@@ -17,7 +17,7 @@ export default function Layout() {
                                 <HomeO />
                             </NavLink>
                         }
-                    ></Tabbar.Item>
+                    >首页</Tabbar.Item>
                     <Tabbar.Item
                         name="查词"
                         icon={
@@ -25,7 +25,7 @@ export default function Layout() {
                                 <Search />
                             </NavLink>
                         }
-                    ></Tabbar.Item>
+                    >查词</Tabbar.Item>
                     <Tabbar.Item
                         name="单词本"
                         icon={
@@ -33,7 +33,7 @@ export default function Layout() {
                                 <NewspaperO />
                             </NavLink>
                         }
-                    ></Tabbar.Item>
+                    >单词本</Tabbar.Item>
                     <Tabbar.Item
                         name="我的"
                         icon={
@@ -41,7 +41,7 @@ export default function Layout() {
                                 <Contact />
                             </NavLink>
                         }
-                    ></Tabbar.Item>
+                    >我的</Tabbar.Item>
                 </Tabbar>
             </div>
         </div>
