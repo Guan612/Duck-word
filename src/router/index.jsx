@@ -1,10 +1,12 @@
 import {useRoutes, Navigate} from 'react-router-dom'
 
-import Layout from '../layout'
+import Layout from '../layout/indexlLayout'
+import LearnLayout from '../layout/learnLayout'
 import Main from '../pages/main'
 import WordText from '../pages/wordtext'
 import SearchWord from '../pages/searchword'
 import Home from '../pages/me'
+import LearnWord from '../pages/learnword'
 
 const routes = [
     {
@@ -37,6 +39,19 @@ const routes = [
             }
         ]
     },
+    {
+        path: "/learn",
+        label: '记单词',
+        element: <LearnLayout/>,
+        children:[
+            {
+                path: 'learnword',
+                label: '学习单词',
+                element: <LearnWord />,
+            }
+        ]
+
+    }
 ]
 
 export default function Router() {
