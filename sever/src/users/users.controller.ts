@@ -19,8 +19,14 @@ export class UsersController {
   @Post()
   @ApiOperation({ summary: '创建用户' })
   //@ApiResponse({ status: 200, description: '响应成功' }) //描述响应码
-  create(@Body() createUserDto:Prisma.UserCreateManyInput) {
+  create(@Body() createUserDto: Prisma.UserCreateManyInput) {
     return this.usersService.create(createUserDto);
+  }
+
+  @Post('login')
+  @ApiOperation({ summary: '用户登录' })
+  login(@Body() loginDto: Prisma.UserCreateInput) {  
+    return this.usersService.login(loginDto);
   }
 
   @Get()
