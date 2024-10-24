@@ -9,6 +9,33 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  loginId  String  @unique
+  nickName String?
+  password String
+  role     Int     @default(0) //0:学生，1:老师
+}
+
+model Senior {
+  id               Int                       @id @default(autoincrement())
+  word             String                    @unique
+  translate        String
+  todayLearnSenior TodayLearningSeniorList[]
+}
+
+model TodayLearning {
+  id      Int @id @default(autoincrement())
+  userId  Int
+  isLearn Int @default(0) //0:未学，1:已学
+}
+
+model TodayLearningSeniorList {
+  id     Int    @id @default(autoincrement())
+  wordId Int
+  senior Senior @relation(fields: [wordId], references: [id])
 }
